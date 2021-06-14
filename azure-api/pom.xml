@@ -24,6 +24,12 @@
             <artifactId>spring-boot-starter-web</artifactId>
             <version>${springboot.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-webflux</artifactId>
+            <version>${springboot.version}</version>
+        </dependency>
         <!-- END https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web -->
 
         <!-- START SWAGGER 라이브러리 -->
@@ -48,6 +54,15 @@
             <version>2.4.3</version>
         </dependency>
         <!-- END SWAGGER 라이브러리 -->
+
+        <!-- START https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.5.13</version>
+        </dependency>
+        <!-- END https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
+
     </dependencies>
 
     <build>
