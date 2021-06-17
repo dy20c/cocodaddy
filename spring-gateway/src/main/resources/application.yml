@@ -5,3 +5,13 @@ server:
 #  cloud:
 #    gateway:
 #      routes:
+spring:
+  cloud:
+    gateway:
+      routes:
+        -   id: order-service
+            uri: http://localhost:2020
+            predicates:
+              - Path=/azure/**
+            filters:
+              - RewritePath=/azure/(?<path>.*),/$\{path}
