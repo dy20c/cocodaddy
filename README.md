@@ -1,4 +1,7 @@
-Read Me
+README
+---
+
+Azure IaaS API Project
 
 template on
 npm clean-install
