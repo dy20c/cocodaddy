@@ -2,26 +2,35 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>lds</artifactId>
+        <groupId>cocodaddy</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>cocodaddy</groupId>
-    <artifactId>lds</artifactId>
-    <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
-    <url>https://github.com/dy20c</url>
 
-    <modules>
-        <module>azure-api</module>
-        <module>portal-web</module>
-        <module>spring-gateway</module>
-        <module>spring-config</module>
-    </modules>
+    <artifactId>spring-config</artifactId>
+
+    <properties><spring.config>3.0.4</spring.config></properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-config-server</artifactId>
+            <version>${spring.config}</version>
+        </dependency>
+    </dependencies>
 
     <build>
         <defaultGoal>install</defaultGoal>
         <directory>${basedir}/target</directory>
         <finalName>${artifactId}-${version}</finalName>
         <pluginManagement>
-            <plugins><plugin>
+            <plugins>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                </plugin>
+                <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
                     <version>3.6.0</version>
@@ -34,5 +43,4 @@
             </plugins>
         </pluginManagement>
     </build>
-
 </project>

@@ -1,12 +1,18 @@
 server:
-  port: 2020
+  port: 1010
   servlet:
     context-path: /
 
 spring:
+  application:
+    name: cocodaddy
   profiles:
     active: local
-
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/dy20c/cocodaddy-config-server.git
 
 ---
 spring:
